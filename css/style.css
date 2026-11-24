@@ -1,0 +1,1058 @@
+
+/* 1. Importación de tipografías */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+
+/* 2. Variables de colores y tipografías */
+
+:root {
+    --sillar: #f5f1e8;
+    --arena: #d6c5aa;
+    --tierra: #967457;
+    --terracota: #763f30;
+    --carbon: #252525;
+    --blanco: #ffffff;
+    --oscuro: #1c1b18;
+
+    --fuente-titulos: 'Cinzel', Georgia, serif;
+    --fuente-textos: 'Cormorant Garamond', Georgia, serif;
+    --fuente-menu: Arial, Helvetica, sans-serif;
+}
+
+
+/* 3. Configuración general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: var(--sillar);
+    color: var(--carbon);
+    font-family: var(--fuente-textos);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    line-height: 1.4;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+a {
+    color: var(--terracota);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+::selection {
+    background-color: var(--terracota);
+    color: var(--blanco);
+}
+
+
+/* 4. Accesibilidad */
+
+.salto-contenido {
+    position: absolute;
+    top: -100px;
+    left: 15px;
+    padding: 12px 20px;
+    background-color: var(--carbon);
+    color: var(--blanco);
+    font-family: var(--fuente-menu);
+    font-size: 16px;
+    z-index: 2000;
+}
+
+.salto-contenido:focus {
+    top: 10px;
+}
+
+a:focus-visible,
+button:focus-visible,
+video:focus-visible,
+audio:focus-visible {
+    outline: 3px solid #b06a28;
+    outline-offset: 5px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* 5. Encabezado y navegación */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--oscuro);
+    border-bottom: 2px solid var(--tierra);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    max-width: 1300px;
+    min-height: 80px;
+    margin: auto;
+    padding: 15px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--blanco);
+    font-family: var(--fuente-titulos);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.logo span {
+    color: var(--arena);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--sillar);
+    font-family: var(--fuente-menu);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background-color: var(--arena);
+    transition: width 0.3s;
+}
+
+.menu a:hover {
+    color: var(--arena);
+}
+
+.menu a:hover::after,
+.menu a:focus-visible::after {
+    width: 100%;
+}
+
+.boton-menu {
+    display: none;
+    background: transparent;
+    color: var(--blanco);
+    border: 1px solid var(--arena);
+    border-radius: 4px;
+    padding: 5px 14px;
+    font-size: 25px;
+}
+
+
+/* 6. Portada principal */
+
+.hero {
+    min-height: 88vh;
+    padding: 90px 6%;
+
+    background:
+        linear-gradient(
+            rgba(20, 18, 15, 0.55),
+            rgba(20, 18, 15, 0.75)
+        ),
+        url("../img/portada.png");
+
+    background-color: #40372e;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: var(--blanco);
+}
+
+.hero-contenido {
+    max-width: 1000px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--terracota);
+    font-family: var(--fuente-menu);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.hero .etiqueta {
+    color: var(--arena);
+}
+
+
+/* Título con efecto de piedra tallada */
+
+.hero h1 {
+    font-family: var(--fuente-titulos);
+    font-size: clamp(38px, 7.5vw, 105px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: var(--sillar);
+
+    text-shadow:
+        1px 1px 0 #9e8c73,
+        2px 2px 0 #62513e,
+        3px 3px 0 #403428,
+        0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Ornamento debajo del título */
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    margin: 25px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--arena),
+        transparent
+    );
+}
+
+.hero h2 {
+    font-size: clamp(20px, 3vw, 34px);
+    font-weight: 500;
+    color: var(--arena);
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    font-family: var(--fuente-textos);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+
+/* 7. Botones */
+
+.boton-principal,
+.boton-secundario {
+    display: inline-block;
+    padding: 14px 28px;
+    margin: 7px;
+
+    font-family: var(--fuente-menu);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    border: 2px solid transparent;
+    border-radius: 3px;
+
+    transition:
+        background-color 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.boton-principal {
+    background: linear-gradient(
+        135deg,
+        #854c3b,
+        #623326
+    );
+
+    color: var(--blanco);
+    border-color: #a97558;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.boton-principal:hover {
+    background: #542b20;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border-color: var(--arena);
+    color: var(--blanco);
+}
+
+.boton-secundario:hover {
+    background-color: var(--arena);
+    color: var(--carbon);
+    transform: translateY(-3px);
+}
+
+
+/* 8. Secciones generales */
+
+.seccion {
+    max-width: 1250px;
+    margin: auto;
+    padding: 95px 5%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion h2 {
+    font-size: clamp(28px, 4vw, 45px);
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--carbon);
+}
+
+.titulo-seccion h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 22px auto;
+    background-color: var(--terracota);
+}
+
+.titulo-seccion p {
+    max-width: 700px;
+    margin: 15px auto;
+    font-size: 22px;
+}
+
+
+/* 9. Historia y canteros */
+
+.contenido-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.contenido-imagen {
+    background-color: var(--arena);
+    border: 1px solid #c6b397;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 12px 12px 0 var(--arena);
+}
+
+.contenido-imagen img {
+    height: 420px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.contenido-imagen:hover img {
+    transform: scale(1.035);
+}
+
+.contenido-texto h3 {
+    font-size: clamp(24px, 3vw, 31px);
+    color: var(--terracota);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.contenido-texto p {
+    font-family: var(--fuente-textos);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+
+/* 10. Frase destacada */
+
+.frase-destacada {
+    background: linear-gradient(
+        135deg,
+        #763f30,
+        #512c21
+    );
+
+    color: var(--blanco);
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 3px solid var(--tierra);
+    border-bottom: 3px solid var(--tierra);
+}
+
+.frase-destacada blockquote {
+    max-width: 900px;
+    margin: auto;
+
+    font-family: var(--fuente-textos);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.frase-destacada p {
+    margin-top: 25px;
+    margin-bottom: 0;
+    color: #f3e6d3;
+
+    font-family: var(--fuente-titulos);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+
+/* 11. Tarjetas del proceso artesanal */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 70px;
+}
+
+.tarjeta {
+    position: relative;
+    padding: 35px 28px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #eee5d7
+    );
+
+    border: 1px solid var(--arena);
+    border-top: 4px solid var(--terracota);
+    border-radius: 4px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.numero {
+    display: block;
+    font-family: var(--fuente-titulos);
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--terracota);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* 12. Galería fotográfica */
+
+.galeria {
+    border-top: 1px solid var(--arena);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.galeria-grid figure {
+    position: relative;
+    height: 320px;
+    background-color: var(--carbon);
+    overflow: hidden;
+    border: 1px solid var(--tierra);
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.galeria-grid img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.galeria-grid figure:hover img {
+    transform: scale(1.07);
+}
+
+.galeria-grid figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(20, 18, 15, 0.95)
+    );
+
+    color: var(--blanco);
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+/* 13. Experiencia multimedia */
+
+.experiencias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.experiencia {
+    min-width: 0;
+    background-color: var(--blanco);
+    padding: 30px;
+    border: 1px solid var(--arena);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.experiencia h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--terracota);
+    margin-bottom: 15px;
+}
+
+.experiencia p {
+    font-size: 21px;
+    line-height: 1.6;
+}
+
+.experiencia video {
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background-color: var(--carbon);
+}
+
+.experiencia audio {
+    display: block;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.experiencia a {
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.interactiva {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #e9dfcf,
+        #d6c5aa
+    );
+
+    border: 2px solid #b7a184;
+    padding: 50px 25px;
+}
+
+.interactiva p {
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+.interactiva .boton-principal {
+    color: var(--blanco);
+}
+
+
+/* 14. Reflexión final */
+
+.reflexion {
+    background:
+        linear-gradient(
+            rgba(28, 27, 24, 0.85),
+            rgba(28, 27, 24, 0.90)
+        ),
+        url("../img/arquitectura.png");
+
+    background-color: var(--carbon);
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    color: var(--blanco);
+    padding: 100px 8%;
+
+    border-top: 3px solid var(--tierra);
+    border-bottom: 3px solid var(--tierra);
+}
+
+.reflexion .etiqueta {
+    color: var(--arena);
+}
+
+.reflexion h2 {
+    max-width: 900px;
+    margin: 0 auto 30px;
+
+    font-size: clamp(28px, 4vw, 45px);
+    font-weight: 600;
+    color: var(--sillar);
+}
+
+.reflexion p {
+    max-width: 750px;
+    margin: 15px auto;
+    font-size: 23px;
+    line-height: 1.7;
+}
+
+.reflexion .boton-principal {
+    margin-top: 25px;
+}
+
+
+/* 15. Créditos y transparencia */
+
+.creditos-contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.creditos-contenido article {
+    background-color: var(--blanco);
+    padding: 28px;
+    border: 1px solid var(--arena);
+    border-left: 3px solid var(--terracota);
+    border-radius: 3px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.creditos-contenido h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--terracota);
+    margin-bottom: 15px;
+}
+
+.creditos-contenido ul {
+    list-style-position: inside;
+}
+
+.creditos-contenido p,
+.creditos-contenido li {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.creditos-contenido a {
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+
+/* 16. Pie de página */
+
+.footer {
+    background-color: var(--oscuro);
+    color: var(--sillar);
+    text-align: center;
+    padding: 55px 20px;
+    border-top: 3px solid var(--tierra);
+}
+
+.footer h2 {
+    color: var(--arena);
+    font-family: var(--fuente-titulos);
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--arena);
+    font-size: 18px;
+}
+
+
+/* 17. Diseño adaptable para tabletas */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .contenido-doble {
+        gap: 35px;
+    }
+
+    .contenido-imagen img {
+        height: 350px;
+    }
+
+    .creditos-contenido {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenido-texto p {
+        font-size: 21px;
+    }
+
+}
+
+
+/* 18. Diseño adaptable para celulares */
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 90px;
+    }
+
+    .navbar {
+        min-height: 70px;
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .boton-menu {
+        display: block;
+    }
+
+    .menu {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px 5px;
+        border-bottom: 1px solid #4c4740;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 65px 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 60px);
+        letter-spacing: 1px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 21px;
+    }
+
+    .hero .boton-principal,
+    .hero .boton-secundario {
+        display: block;
+        max-width: 320px;
+        margin: 12px auto;
+    }
+
+    .seccion {
+        padding: 60px 6%;
+    }
+
+    .contenido-doble,
+    .tarjetas,
+    .galeria-grid,
+    .experiencias,
+    .creditos-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido-doble {
+        gap: 30px;
+    }
+
+    .contenido-imagen img {
+        height: 290px;
+    }
+
+    .contenido-texto h3 {
+        font-size: 24px;
+    }
+
+    .contenido-texto p {
+        font-size: 20px;
+    }
+
+    .tarjetas {
+        margin-top: 40px;
+    }
+
+    .galeria-grid figure {
+        height: 280px;
+    }
+
+    .galeria-grid figcaption {
+        font-size: 17px;
+    }
+
+    .experiencia {
+        padding: 22px;
+    }
+
+    .interactiva {
+        grid-column: auto;
+    }
+
+    .frase-destacada,
+    .reflexion {
+        padding: 60px 6%;
+    }
+
+    .reflexion p {
+        font-size: 21px;
+    }
+
+    .etiqueta {
+        letter-spacing: 2px;
+    }
+
+    .footer h2 {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+}
+
+
+/* 19. Respeto a preferencias de movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .tarjeta:hover,
+    .boton-principal:hover,
+    .boton-secundario:hover,
+    .contenido-imagen:hover img,
+    .galeria-grid figure:hover img {
+        transform: none;
+    }
+
+}
+
+/* 20. Enlace activo del menú */
+
+.menu a.activo {
+    color: var(--arena);
+}
+
+.menu a.activo::after {
+    width: 100%;
+}
+
+
+/* 21. Animaciones de aparición */
+
+.animar {
+    animation: none;
+}
+
+.animar.visible {
+    animation: aparecer 0.8s ease-out;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0.4;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* 22. Botón flotante para subir */
+
+.boton-subir {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 52px;
+    height: 52px;
+
+    background: linear-gradient(
+        145deg,
+        #967457,
+        #623326
+    );
+
+    color: #ffffff;
+
+    border: 1px solid var(--arena);
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+    z-index: 900;
+
+    transition:
+        transform 0.3s,
+        background-color 0.3s;
+}
+
+.boton-subir:hover {
+    transform: translateY(-5px);
+    background: var(--terracota);
+}
+
+
+/* 23. Ajustes para dispositivos móviles */
+
+@media (max-width: 768px) {
+
+    .boton-subir {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .menu a.activo {
+        border-left: 3px solid var(--arena);
+        padding-left: 15px;
+    }
+
+}
+
+
+/* 24. Accesibilidad de las animaciones */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .animar.visible {
+        animation: none;
+    }
+
+    .boton-subir:hover {
+        transform: none;
+    }
+
+}
