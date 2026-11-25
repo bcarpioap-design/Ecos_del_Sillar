@@ -1,0 +1,299 @@
+
+/* =========================================
+   ECOS DEL SILLAR
+   Página de créditos y transparencia
+   ========================================= */
+
+
+/* 1. Encabezado */
+
+.cabecera-creditos {
+
+    background:
+        linear-gradient(
+            rgba(28, 27, 24, 0.85),
+            rgba(28, 27, 24, 0.92)
+        ),
+        url("../img/arquitectura.jpg");
+
+    background-color: var(--oscuro);
+    background-size: cover;
+    background-position: center;
+
+    color: var(--sillar);
+    padding: 85px 5%;
+    text-align: center;
+
+    border-bottom: 3px solid var(--tierra);
+
+}
+
+.cabecera-creditos .etiqueta {
+    color: var(--arena);
+}
+
+.cabecera-creditos h1 {
+
+    font-family: var(--fuente-titulos);
+    font-size: clamp(28px, 5vw, 55px);
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        1px 1px 0 #9e8c73,
+        2px 2px 0 #62513e,
+        0 4px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.cabecera-creditos p {
+
+    max-width: 750px;
+    margin: 0 auto 25px;
+
+    font-size: 23px;
+    line-height: 1.7;
+
+}
+
+
+/* 2. Contenedor principal */
+
+.pagina-creditos {
+
+    max-width: 1200px;
+    margin: auto;
+    padding: 65px 5%;
+
+}
+
+
+/* 3. Bloques de contenido */
+
+.bloque-creditos {
+
+    background-color: var(--blanco);
+
+    padding: 35px;
+    margin-bottom: 30px;
+
+    border: 1px solid var(--arena);
+    border-left: 4px solid var(--terracota);
+    border-radius: 4px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+}
+
+.bloque-creditos h2 {
+
+    font-family: var(--fuente-titulos);
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 600;
+
+    color: var(--terracota);
+
+    margin-bottom: 25px;
+    overflow-wrap: anywhere;
+
+}
+
+.bloque-creditos h2::after {
+
+    content: "";
+    display: block;
+
+    width: 65px;
+    height: 3px;
+
+    margin-top: 15px;
+
+    background-color: var(--terracota);
+
+}
+
+.bloque-creditos p {
+
+    font-family: var(--fuente-textos);
+    font-size: 21px;
+    line-height: 1.7;
+
+}
+
+.bloque-creditos p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 4. Listas y referencias */
+
+.bloque-creditos ul {
+
+    padding-left: 25px;
+    margin-top: 15px;
+
+}
+
+.bloque-creditos li {
+
+    font-size: 21px;
+    margin-bottom: 8px;
+
+}
+
+.bloque-creditos a {
+
+    color: var(--terracota);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+
+    transition: color 0.3s;
+
+}
+
+.bloque-creditos a:hover {
+    color: var(--carbon);
+}
+
+
+/* 5. Contenedor de la tabla */
+
+.tabla-contenedor {
+
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid var(--arena);
+    border-radius: 4px;
+
+}
+
+.tabla-contenedor:focus-visible {
+
+    outline: 3px solid var(--terracota);
+    outline-offset: 4px;
+
+}
+
+
+/* 6. Tabla de créditos */
+
+.tabla-contenedor table {
+
+    width: 100%;
+    min-width: 600px;
+
+    border-collapse: collapse;
+
+    font-family: var(--fuente-textos);
+    font-size: 20px;
+
+}
+
+.tabla-contenedor th,
+.tabla-contenedor td {
+
+    padding: 18px;
+
+    border: 1px solid var(--arena);
+
+    text-align: left;
+    vertical-align: top;
+
+}
+
+.tabla-contenedor th {
+
+    background-color: var(--terracota);
+    color: var(--blanco);
+
+    font-family: var(--fuente-titulos);
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+.tabla-contenedor tbody tr:nth-child(even) {
+    background-color: var(--sillar);
+}
+
+.tabla-contenedor tbody tr:nth-child(odd) {
+    background-color: var(--blanco);
+}
+
+.tabla-contenedor tbody tr:hover {
+    background-color: #e9dfcf;
+}
+
+
+/* 7. Diseño para tabletas */
+
+@media (max-width: 1000px) {
+
+    .pagina-creditos {
+        padding: 50px 5%;
+    }
+
+    .bloque-creditos {
+        padding: 28px;
+    }
+
+}
+
+
+/* 8. Diseño para celulares */
+
+@media (max-width: 768px) {
+
+    .cabecera-creditos {
+        padding: 60px 6%;
+    }
+
+    .cabecera-creditos h1 {
+        font-size: 30px;
+    }
+
+    .cabecera-creditos p {
+        font-size: 20px;
+    }
+
+    .pagina-creditos {
+        padding: 35px 5%;
+    }
+
+    .bloque-creditos {
+        padding: 22px;
+        margin-bottom: 22px;
+    }
+
+    .bloque-creditos h2 {
+        font-size: 23px;
+    }
+
+    .bloque-creditos p,
+    .bloque-creditos li {
+        font-size: 20px;
+    }
+
+    .tabla-contenedor table {
+        font-size: 18px;
+    }
+
+    .tabla-contenedor th,
+    .tabla-contenedor td {
+        padding: 12px;
+    }
+
+}
+
+
+/* 9. Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .bloque-creditos a {
+        transition: none;
+    }
+
+}
